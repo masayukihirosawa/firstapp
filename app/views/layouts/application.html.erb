@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Firstapp</title>
+    <title>Qiitenai</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("TweetApp", "/") %>
+        <%= link_to("Qiitenai", "/") %>
       </div>
       <ul class="header-menus">
         <% if session[:user_id] %>
@@ -32,7 +32,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to("TweetAppとは", "/about") %>
+            <%= link_to("about", "/about") %>
           </li>
           <li>
             <%= link_to("新規登録", "/signup") %>
