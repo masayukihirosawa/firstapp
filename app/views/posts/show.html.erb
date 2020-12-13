@@ -3,6 +3,17 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <div class="post-status">
+        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+            <span class="fa fa-share like-btn-unlike">共有をやめる</span>
+          <% end %>
+      　<% else %>
+          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+            <span class="fa fa-share like-btn">共有する</span>
+          <% end %>
+      　<% end %>
+      　</div>
       </div>
       <p>
         <%= @post.title %>
@@ -10,6 +21,7 @@
       <p>
         <%=safe_join(@post.content.split("\n"),tag(:br))%>
       </p>
+      
       <div class="post-time">
         <%= l @post.created_at %>
       </div>

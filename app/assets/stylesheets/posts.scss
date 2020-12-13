@@ -99,7 +99,26 @@
   opacity: 0.5;
 }
 
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.posts-show-item .fa {
+  font-size: 20px;
+  margin-right: 3px;
+}
+
+
 /* ここまでプロゲート =====================*/
 .posts-form input {
     margin-bottom: 3px;
+}
+
+
+.posts-show-item .post-status {
+  float: right;
 }

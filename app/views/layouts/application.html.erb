@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -19,10 +20,10 @@
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
-            <%= link_to("投稿一覧", "/posts/index") %>
+            <%= link_to("メモる", "/posts/new") %>
           </li>
           <li>
-            <%= link_to("新規投稿", "/posts/new") %>
+            <%= link_to("みんなのメモ", "/posts/index") %>
           </li>
           <li>
             <%= link_to("ユーザー一覧", "/users/index") %>
