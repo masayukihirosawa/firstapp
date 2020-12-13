@@ -6,6 +6,6 @@ class User < ApplicationRecord
     validates :email, {presence: true, uniqueness: true}
     
     def posts
-    return Post.where(user_id: self.id)
+    return Post.where(user_id: self.id).order(created_at: :desc)
     end
 end
