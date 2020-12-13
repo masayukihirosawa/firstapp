@@ -5,7 +5,10 @@
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
       <p>
-        <%= @post.content %>
+        <%= @post.title %>
+      </p>
+      <p>
+        <%=safe_join(@post.content.split("\n"),tag(:br))%>
       </p>
       <div class="post-time">
         <%= l @post.created_at %>
