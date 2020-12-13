@@ -3,6 +3,7 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <% if @current_user.id == @post.user_id %>
         <div class="post-status">
         <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
           <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
@@ -14,6 +15,7 @@
           <% end %>
       　<% end %>
       　</div>
+      　<% end %>
       </div>
       <p>
         <%= @post.title %>
