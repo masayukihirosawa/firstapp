@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   before_action :authenticate_user
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :share_post, {only: [:show]}
   
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -58,6 +59,17 @@ class PostsController < ApplicationController
     if @current_user.id != @post.user_id
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index")
+    end
+  end
+  
+  def share_post
+    @post = Post.find_by(id: params[:id])
+    if @current_user.id != @post.user_id
+      @like = Like.find_by(post_id: params[:id])
+      if @like == nil
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+      end
     end
   end
   
