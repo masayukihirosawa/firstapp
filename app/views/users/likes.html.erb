@@ -15,7 +15,7 @@
       <% else %>
         <li><%= link_to("メモ", "/users/#{@user.id}/likes") %></li>
       <% end %>
-      <li class="active"><%= link_to("共有済", "/users/#{@user.id}/likes") %></li>
+      <li class="active"><%= link_to("共有メモ", "/users/#{@user.id}/likes") %></li>
     </ul>
     
     <% @likes.each do |like| %>
